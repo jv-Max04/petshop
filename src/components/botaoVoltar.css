@@ -1,0 +1,14 @@
+.btVoltar {
+    position: fixed;
+    top:12px;
+    left:12px;
+
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    background: url('./assets/elipse.png');
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
