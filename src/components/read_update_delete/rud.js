@@ -29,6 +29,7 @@ export default function Rud() {
         </div>
         </>
     )
+    
 }
 
 const adicionarRegistro = () =>
