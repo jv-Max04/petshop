@@ -9,9 +9,8 @@ function App() {
         <button>Cadastrar Funcionário</button>
         <button>Registrar Atendimento</button>
         <button>Pesquisa de satisfação</button>
-      
-        <button id='reg'>Acessar Registros</button>
       </div>
+      <button id='reg'>Acessar Registros</button> 
     </div>
   );
 }
