@@ -2,11 +2,12 @@ body {
   display: flex;
   background-image: url(/src/media/bg.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
-#botoes {
+#div_botoes {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -29,8 +30,11 @@ button {
   line-height: normal;
 }
 
-#reg {
+#bt_reg {
   width: 12rem;
-  position: relative;
+
+  display: flex;
+  position: absolute;
+  top: 33rem;
   left:65rem; 
 }
