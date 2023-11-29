@@ -27,8 +27,8 @@ function atualizar(){
         <td>${dono.cpf}</td>
         <td>${dono.endereco}</td>
         <td>${dono.telefone}</td>
-        <td><button onclick="inciaredicao(${dono.id_cliente})"/>Editar</button></td>
-        <td><button onclick="deletar(${dono.id_cliente})">Excluir</button></td>
+        <td><button class ="btn btn-dark" onclick="inciaredicao(${dono.id_cliente})"/>Editar</button></td>
+        <td><button class ="btn btn-danger" onclick="deletar(${dono.id_cliente})">Excluir</button></td>
         `;
         corpoTab.appendChild(linha);
     })
