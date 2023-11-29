@@ -24,7 +24,7 @@ function atualizar(){
         <td>${funcionarios.salario}</td>
         <td>${funcionarios.funcao}</td>
         <td><button class ="btn btn-dark" onClick = "iniciarEdicao(${funcionarios.id_funcionario})">Editar</button></td>
-        <td><button class = "brn btn-danger" onClick = "deletar(${funcionarios.id_funcionario})">Excluir</button></td>
+        <td><button class = "btn btn-danger" onClick = "deletar(${funcionarios.id_funcionario})">Excluir</button></td>
         `;
         corpoTabela.appendChild(linha);
     })
