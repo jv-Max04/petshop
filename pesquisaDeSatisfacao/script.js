@@ -38,8 +38,8 @@ function atualizar()
             <td>${objeto.id_cliente}</td>
             <td>${objeto.nota}</td>
             <td>${objeto.feedback}</td>
-            <td><button class="btEditar" onclick="iniciarEdicao(${objeto.id_pesquisa})">Editar</button></td>
-            <td><button class="btExcluir" onclick="btExcluir(${objeto.id_pesquisa})">Excluir</button></td>
+            <td><button class="btn btn-dark" onclick="iniciarEdicao(${objeto.id_pesquisa})">Editar</button></td>
+            <td><button class="btn btn-danger" onclick="btExcluir(${objeto.id_pesquisa})">Excluir</button></td>
         `;
         corpoTab.appendChild(linha);
     })
