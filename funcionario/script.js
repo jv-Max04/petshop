@@ -106,6 +106,12 @@ async function put(id){
 
 document.getElementById("form").addEventListener("submit", (event) => {
     event.preventDefault();
+
+    if(document.getElementById("nome").value.trim() == "" ||document.getElementById("tipo").value.trim() == ""||document.getElementById("descricao").value.trim() == ""){
+        alert("Preencha todos os campos!");
+        return;
+    } //? Para evitar linhas vazias
+
     if(funcionarioEditado == null){
         post();
         consultar();
@@ -121,8 +127,8 @@ document.getElementById("form").addEventListener("submit", (event) => {
 
 document.getElementById("canc").addEventListener("click", (event) => {
     event.preventDefault()
-    document.getElementById("form").reset();
     funcionarioEditado = null;
+    document.getElementById("form").reset();
     document.getElementById("canc").style.display = "none";
 })
 

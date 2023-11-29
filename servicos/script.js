@@ -126,8 +126,8 @@ document.getElementById("form").addEventListener("submit", (e)=>{
 
 document.getElementById("canc").addEventListener("click", (event)=>{
     event.preventDefault(); //? Previne o submit
-    document.getElementById("form").reset(); //? Reseta o form
     servicoEditado = null;//? Define o produto sendo editado atualmente como nulo
+    document.getElementById("form").reset(); //? Reseta o form
     document.getElementById("canc").style.display = "none"; //? Esconde o botão cancelar
 })
 

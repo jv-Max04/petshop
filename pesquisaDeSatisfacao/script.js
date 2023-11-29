@@ -48,6 +48,10 @@ function atualizar()
 document.getElementById("form").addEventListener("submit", (evento) =>
 {
     evento.preventDefault();
+    if(document.getElementById("nome").value.trim() == "" ||document.getElementById("tipo").value.trim() == ""||document.getElementById("descricao").value.trim() == ""){
+        alert("Preencha todos os campos!");
+        return;
+    }
 
     if(pesquisaEditada === null)
     {

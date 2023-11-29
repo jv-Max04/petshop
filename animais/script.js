@@ -18,8 +18,8 @@ function atualizar(){
       <td>${animal.raca}</td>
       <td>${animal.cor}</td>
       <td>${animal.sexo}</td>
-      <td><button onClick="iniciarEdicao(${animal.id_animal})">Editar</button></td>
-      <td><button onClick="deletar(${animal.id_animal})">Excluir</button></td>
+      <td><button class="btn btn-dark" onClick="iniciarEdicao(${animal.id_animal})">Editar</button></td>
+      <td><button class="btn btn-danger" onClick="deletar(${animal.id_animal})">Excluir</button></td>
       `;
       corpoTab.appendChild(linha);
       console.log("Colocado");
@@ -130,6 +130,13 @@ async function put() {
 
 document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
+
+  if(document.getElementById("nome").value.trim() == "" ||document.getElementById("tipo").value.trim() == ""||document.getElementById("descricao").value.trim() == ""){
+    alert("Preencha todos os campos!");
+    return;
+} //? Evita input vazio
+
+
   if (animalEditado === null) {
     post();
     consultar();
