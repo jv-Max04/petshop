@@ -1,12 +1,6 @@
 import './cadastro.css';
-import BtVoltar from '../botaoVoltar.js'
+import BtVoltar from '../btVoltar/botaoVoltar.js'
 
-//idCad vai ser passado pela página Home:
-    /*
-        <Cadastro
-            idCad=
-        />
-    */
 export default function Cadastro({idCad}) {
     return(
         <>

@@ -1,0 +1,18 @@
+#btVoltar {
+    position: absolute;
+    top:12px;
+    left:12px;
+
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    border: 3px solid black;
+    padding: 10px solid #fbb993;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    color: #6522f5;
+    background-color: #fbb993;
+    cursor: pointer;
+}
