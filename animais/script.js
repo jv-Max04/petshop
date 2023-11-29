@@ -131,7 +131,7 @@ async function put() {
 document.getElementById("form").addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if(document.getElementById("nome").value.trim() == "" ||document.getElementById("tipo").value.trim() == ""||document.getElementById("descricao").value.trim() == ""){
+  if(document.getElementById("dono").value.trim() == "" ||document.getElementById("nome").value.trim() == ""||document.getElementById("especie").value.trim() == "" || document.getElementById("raca").value.trim() == "" || document.getElementById("cor").value.trim() == "" || document.getElementById("sexo").value.trim() == ""){
     alert("Preencha todos os campos!");
     return;
 } //? Evita input vazio

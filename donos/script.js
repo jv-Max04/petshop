@@ -107,7 +107,7 @@ consultar();
 document.getElementById("form").addEventListener("submit",(event)=>{
     event.preventDefault();//evitar que a pagina fique reiniciando auto
 
-    if(document.getElementById("nome").value.trim() == "" ||document.getElementById("tipo").value.trim() == ""||document.getElementById("descricao").value.trim() == ""){
+    if(document.getElementById("nome").value.trim() == "" ||document.getElementById("cpf").value.trim() == "" || document.getElementById("endereco").value.trim() == "" || document.getElementById("telefone").value.trim() == ""){
         alert("Preencha todos os campos!");
         return;
     }//? Evita insert vazio

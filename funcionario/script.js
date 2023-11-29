@@ -107,7 +107,7 @@ async function put(id){
 document.getElementById("form").addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if(document.getElementById("nome").value.trim() == "" ||document.getElementById("tipo").value.trim() == ""||document.getElementById("descricao").value.trim() == ""){
+    if(document.getElementById("nome").value.trim() == "" || document.getElementById("cpf").value.trim() == "" ||document.getElementById("salario").value.trim() == "" || document.getElementById("funcao").value.trim() == ""){
         alert("Preencha todos os campos!");
         return;
     } //? Para evitar linhas vazias
