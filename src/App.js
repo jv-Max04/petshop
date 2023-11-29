@@ -1,16 +1,12 @@
 import './App.css';
+import { useState } from 'react';
+import TelaInicial from './components/telaInicial/telaInicial';
+import Cadastro from './components/cadastro/cadastro';
 
 function App() {
   return (
     <div id='main'>
-      <div id='div_botoes'>
-        <button>Cadastrar Dono</button>
-        <button>Cadastrar Animal</button>
-        <button>Cadastrar Funcionário</button>
-        <button>Registrar Atendimento</button>
-        <button>Pesquisa de satisfação</button>
-      </div>
-      <button id='bt_reg'>Acessar Registros</button> 
+      <TelaInicial/>
     </div>
   );
 }
