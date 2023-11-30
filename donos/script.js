@@ -117,6 +117,7 @@ document.getElementById("form").addEventListener("submit",(event)=>{
         consultar();
     }else{
         put(donoeditado);
+        donoeditado = null;
         consultar();
     }
 

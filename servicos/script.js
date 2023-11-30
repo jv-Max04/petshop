@@ -29,7 +29,6 @@ function atualizar(){
         `;
         corpoTab.appendChild(linha);
     })
-    return
 }
 
 async function deletar(id){
@@ -115,7 +114,8 @@ document.getElementById("form").addEventListener("submit", (e)=>{
         post();
         consultar();
     } else {
-        put(servicoEditado);    
+        put(servicoEditado);  
+        servicoEditado = null;  
         consultar();
     }
 

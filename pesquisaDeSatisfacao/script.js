@@ -62,6 +62,7 @@ document.getElementById("form").addEventListener("submit", (evento) =>
     else
     {
         btEditar(pesquisaEditada);
+        pesquisaEditada = null;
         consultar();
     }
 

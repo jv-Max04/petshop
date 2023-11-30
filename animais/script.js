@@ -142,6 +142,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
     consultar();
   } else {
     put(animalEditado);
+    animalEditado = null;
     consultar();
   }
 

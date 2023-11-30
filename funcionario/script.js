@@ -118,6 +118,7 @@ document.getElementById("form").addEventListener("submit", (event) => {
     }
     else{
         put(funcionarioEditado);
+        funcionarioEditado = null;
         consultar();
     }
 

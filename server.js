@@ -11,6 +11,10 @@ const con = mysql.createConnection({
     database:"petshop"
 });
 
+const app = express(); //? Cria uma instância do express
+app.use(express.json()); //? Configura o express para ler JSON 
+app.use(cors()); //? Configura o express para usar o CORS
+
 con.connect(function(err) {
     if (err){
         console.log("Erro durante a conexão: " + err);
@@ -18,18 +22,12 @@ con.connect(function(err) {
         return;
     }  
     console.log("Conectado!");
+    
     app.listen(port, () => {
         console.log(`Servidor online na porta: ${port}`);
     }) //? Declarando a porta em uma constante e ativando o listener
 
-
 }); //? Função acima cria uma conexão com o SGBD
-
-
-const app = express(); //? Cria uma instância do express
-app.use(express.json()); //? Configura o express para ler JSON 
-app.use(cors()); //? Configura o express para usar o CORS
-
 
 function checkErr(res, erro, resp){
     if(erro){
@@ -43,14 +41,12 @@ function checkErr(res, erro, resp){
 
 //* =================================== MAX (Tabela Serviço) =====================================
  app.get("/servico/", (req, res) =>{
-    console.log("GET from " + req.ip);
     con.query("select * from servico", (erro, resposta)=>{
         checkErr(res, erro, resposta);
     });
  });
 
  app.post("/servico", (req, res) =>{
-    console.log("POST from " + req.ip);
     const servico = req.body;
     
     con.query("insert into servico set ?", servico, (erro, resp)=>{
@@ -59,7 +55,6 @@ function checkErr(res, erro, resp){
  });
 
  app.put("/servico/:id", (req, res) => {
-    console.log("PUT from " + req.ip);
     const id  = req.params.id;
     const body = req.body;
 
@@ -69,7 +64,6 @@ function checkErr(res, erro, resp){
  });
 
  app.delete("/servico/:id", (req, res)=>{
-    console.log("DELETE from " + req.ip);
     con.query(`delete from atendimento where id_servico = ${req.params.id}`);
     con.query(`delete from servico where id_servico = ${req.params.id}`, (erro, resp) =>{
         checkErr(res, erro, resp);
@@ -261,3 +255,37 @@ app.delete("/funcionario/:id/", (req, res) => {
 })
 
 //* ========================================================================================================
+
+ //* =================================== Campari (Tabela Atendimento) =====================================
+ app.get("/atendimento/", (req, res) =>{
+    con.query("select * from atendimento", (erro, resposta)=>{
+        checkErr(res, erro, resposta);
+    });
+ });
+
+ app.post("/atendimento", (req, res) =>{
+    console.log("POST from " + req.ip);
+    const atendimento = req.body;
+    
+    con.query("insert into atendimento set ?", atendimento, (erro, resp)=>{
+        checkErr(res, erro, resp);
+    });
+ });
+
+ app.put("/atendimento/:id", (req, res) => {
+    console.log("PUT from " + req.ip);
+    const id  = req.params.id;
+    const body = req.body;
+
+    con.query("update atendimento set ? where id_atendimento = " + id, body, (erro, resp) =>{
+        checkErr(res, erro, resp)
+    });
+ });
+
+ app.delete("/atendimento/:id", (req, res)=>{
+    console.log("DELETE from " + req.ip);
+    con.query(`delete from atendimento where id_atendimento = ${req.params.id} `, (erro, resp) =>{
+        checkErr(res, erro, resp);
+    });
+ });
+//*
