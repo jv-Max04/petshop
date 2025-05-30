@@ -3,10 +3,10 @@ const express = require("express"); //? Necessário para as funções de backend
 const cors = require("cors"); //? Necessário para executar backend e frontend no mesmo computador.
 const mysql = require("mysql2"); //? Usando mysql2 por conta do procedimento de autenticação.
 require("dotenv").config();
-const port = 3000;
+const port = 80;
 
 const con = mysql.createConnection({
-  host: process.env.DB_HOST || "localhost",
+  host: process.env.DB_HOST || "db",
   user: process.env.DB_USER || "root",
   password: process.env.DB_PASSWORD || "",
   database: process.env.DB_NAME || "petshop",
@@ -15,6 +15,8 @@ const con = mysql.createConnection({
 const app = express(); //? Cria uma instância do express
 app.use(express.json()); //? Configura o express para ler JSON
 app.use(cors()); //? Configura o express para usar o CORS
+app.use(express.static('public'));
+
 
 con.connect((err) => {
   if (err) {
